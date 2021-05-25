@@ -1,0 +1,220 @@
+/*VARIAVEIS */
+:root {
+    --color:#393c41;
+    --h2-color:#6e7378;
+    --dark-btn:rgba(23,26,32,0.8);
+    --light-btn:rgba(255,255,255,0.65);
+    --color-dark-btn:#FFF;
+    --color-light-btn:#000;
+}
+/*FONTES*/
+@font-face {
+    font-family: GothamMedium;
+    src: url(../assets/fonts/GothamMedium.otf);
+}
+@font-face {
+    font-family: GothamBook;
+    src: url(../assets/fonts/GothamBookRegular.otf);
+}
+/*PRE-SET*/
+body {
+    font-family: 'GothamMedium', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    
+}
+/*HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    text-transform: uppercase;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+header a {
+    text-decoration: none;
+    color:var(--color);
+    margin-left: 20px;
+    cursor: pointer;
+}
+header .logo img {
+    height: 10px;
+    width: 130px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+header .nav--center{
+    margin-left: 70px;
+}
+header .nav--right img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+header .nav--right {
+    display: flex;
+    align-items: center;
+   
+}
+/*MAIN*/
+main{
+    background-image: url("../assets/images/bg.jpg");
+    background-position:center;
+    background-size:cover;
+    height: 100vh;
+}
+
+main .info {
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+main .info h1{
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-bottom: 0;
+    color: var(S--color);
+}
+main .info h2{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'GothamBook',Arial, Helvetica, sans-serif;
+    color: var(--h2-color);
+}
+main .info h2 a {
+    color: var(--color);
+}
+/*ASIDE INTERACT*/
+aside {
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:999;
+    display:flex;
+}
+.back{
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 10px;
+}
+#menu-area li:nth-child(1){
+    border-bottom: 0;
+}
+#menu-area {
+    width:0px;
+    height:100vh;
+    background-color: var(--color-dark-btn);
+    overflow-x:hidden;
+    overflow-y:auto;
+    transition: all ease .5s;
+}
+#menu-area ul, #menu-area li {
+    padding:0;
+    list-style:none;
+}
+#menu-area li {
+    margin-left: 20px;
+    display:block;
+    color:var(--color);
+    cursor:pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--h2-color);
+    line-height: 35px;
+}
+#menu-area li:hover {
+    background-color: var(--color-dark-btn);
+}
+/*FOOTER*/
+footer{
+    position: fixed;
+    top:84vh;
+    bottom:0; 
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+footer a{
+    display: inline-block;
+    width: 220px;
+    height: 40px;
+    border-radius: 30px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+footer .dark{
+    background-color: var(--dark-btn);
+    color:var(--color-dark-btn);
+    margin-right: 20px;
+}
+footer .light{
+    background-color: var(--light-btn);
+    color:var(--color-light-btn);
+}
+.menu--transition{
+    height: 20px;
+}
+/*ANIMATION*/
+@keyframes arrow {
+    0%{
+        margin-top:0px;
+    }
+    50%{
+        margin-top:10px;
+    }
+    100%{
+        margin-top:0px;
+    }
+    
+}
+
+footer img{
+    height:15px;
+    cursor: pointer;
+    animation-name: arrow;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+/*RESPONSIVIDADE TABLET¨*/
+
+@media (max-width:1200px) {
+    header .nav--center {
+        display: none;
+    }
+    header .nav--right a{
+        display: none;
+    }
+    header .nav--right img{
+        margin-right: 20px;
+    }
+}
+/*RESPONSIVIDADE MOBILE PHONE*/
+@media (max-width:600px){
+    footer .info--inventory{
+        display: flex;
+        flex-direction: column;
+    }
+}
